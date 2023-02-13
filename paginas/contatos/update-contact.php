@@ -51,13 +51,12 @@ $dados = mysqli_fetch_assoc($rs);
     >
     <div class="input-box">
         <label for="servicoContato">Serviço</label> <!--AQUI VAI UM SELECT PRA SELECIONAR SERVIÇO-->
-        <select name="servicoContato" id="">
-            <option value="" name="servico" class="select">Serviço</option>
+        <select name="servicoContato" class="dropdown-select">
+            <option name="servicoContato" class="select" id="servicoContato"></option>
             <?php
-
             $servico = "SELECT * FROM servico";
-            $restult_service = mysqli_query($conexao, $servico);
-            while($row_servico = mysqli_fetch_assoc($restult_service)) { ?>
+            $result_service = mysqli_query($conexao, $servico) or die ("Erro ao configurar conectar com o Banco de Dados!" . mysqli_connect_error());
+            while($row_servico = mysqli_fetch_assoc($result_service)) { ?>
             <option value="<?php echo $row_servico['servicos']; ?>"><?php echo $row_servico['servicos']; ?>
             </option><?php  
 
@@ -69,11 +68,19 @@ $dados = mysqli_fetch_assoc($rs);
 
     <div class="input-box">
         <label for="barbeiro">Barbeiro</label>
-        <select name="barbeiro" id="">
-            
-            <option value="">Barbeiro</option>
-            <option value="">Barbeiro</option>
-        </select>               <!--AQUI VAI UM SELECT PRA SELECIONAR BARBEIRO-->
+        <select name="barbeiro" class="dropdown-select" id="barbeiro">
+        <option name="servicoContato" class="select" id="servicoContato"></option>
+            <?php
+            $servico = "SELECT * FROM barbeiro";
+            $result_service = mysqli_query($conexao, $servico) or die ("Erro ao configurar conectar com o Banco de Dados!" . mysqli_connect_error());
+            while($row_servico = mysqli_fetch_assoc($result_service)) { ?>
+            <option value="<?php echo $row_servico['barbeiro']; ?>"><?php echo $row_servico['barbeiro']; ?>
+            </option><?php  
+
+            }
+
+            ?>
+        </select>                  <!--AQUI VAI UM SELECT PRA SELECIONAR BARBEIRO-->
     </div>
 
     <div class="input-box">

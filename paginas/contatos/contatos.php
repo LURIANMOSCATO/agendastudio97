@@ -18,15 +18,14 @@
     $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     ?>
 
+<div id="floating-button">
+<a href="#demo-modal"><p class="plus">+</p></a>
+    <img class="edit" src="">
+  </div>
+</div>
+
 
 <div class="wraper">
-
-
-    <a href="#demo-modal">
-        <h1>adicionar</h1>
-    </a>
-
-
     <form class="search" action="index.php?menuop=contatos" method="post">
 
     <div class="icon"></div>
@@ -142,8 +141,8 @@
             <td data-tittle="DATA"><?=$dados["dataServico"] ?></td>
             <td data-tittle="HORA"><?=$dados["horaServico"] ?></td>
             <td data-tittle="TEMPO"><?=$dados["tempoServico"] ?></td>
-            <td data-tittle="EDITAR"><a href="index.php?menuop=update-contact&idContato=<?=$dados["idContato"] ?>" id="edit-modal" class="edit-window"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(15, 64, 77, 0.78);transform: ;msFilter:;"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg></a></td>
-            <td data-tittle="CONCLUIR"><a href="index.php?menuop=delete-contact&idContato=<?=$dados["idContato"] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(8, 116, 35, 0.83);transform: ;msFilter:;"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-7.933 13.481-3.774-3.774 1.414-1.414 2.226 2.226 4.299-5.159 1.537 1.28-5.702 6.841z"></path></svg></a></td>
+            <td data-tittle="EDITAR"><a href="index.php?menuop=update-contact&idContato=<?=$dados["idContato"] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(15, 64, 77, 0.78);transform: ;msFilter:;"><path d="m16 2.012 3 3L16.713 7.3l-3-3zM4 14v3h3l8.299-8.287-3-3zm0 6h16v2H4z"></path></svg></a></td>
+            <td data-tittle="CONCLUIR"><a href="index.php?menuop=delete-contact&idContato=<?=$dados["idContato"] ?>" ><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(8, 116, 35, 0.83);transform: ;msFilter:;"><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-7.933 13.481-3.774-3.774 1.414-1.414 2.226 2.226 4.299-5.159 1.537 1.28-5.702 6.841z"></path></svg></a></td>
         </tr>
         <?php
     }
@@ -206,7 +205,6 @@ echo "<a href=\"?menuop=contatos&pagina=$totalPagina\">Última Página</a>";
         <input type="text" name="nomeContato" placeholder="Nome do Cliente" required>
         </div>
         
-    
 
     <div class="input-box">
         <label for="telefoneContato">Telefone</label>
@@ -241,7 +239,6 @@ window.onload = function(){
 
 <div class="input-box">
         <label for="servicoContato">Serviço</label> <!--AQUI VAI UM SELECT PRA SELECIONAR SERVIÇO-->
-
 
         <select name="servicoContato" class="dropdown-select">
             <option name="servicoContato" class="select" id="servicoContato"></option>

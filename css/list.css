@@ -33,7 +33,7 @@ body {
     margin-left: 0;
     justify-content: center;
     display: flex;
-    margin-top: 3px;
+    margin-top: 1px;
 }
 
 /*TABELAS*/
@@ -41,7 +41,7 @@ body {
 table {
   width: 100%;
   max-width: 800px;
-  margin: 50px auto;
+  margin: 20px auto;
   box-shadow: 7px 8px 8px -3px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 4px 20px rgba(5, 57, 94, .5);
   -webkit-box-shadow:  0px 4px 20px rgba(5, 57, 94, .5);
@@ -168,7 +168,7 @@ table th {
 
 .search .input {
   position: relative;
-  width: 360px;
+  width: 350px;
   height: 40px;
   left: 40px;
   display: flex;
@@ -219,33 +219,11 @@ table th {
   transform: rotate(315deg);
 }
 
-.wraper a h1{
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 7px;
-    text-transform: uppercase;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    background: rgb(22, 111, 194);
-    width: 6rem;
-    font-size: 14px;
-    font-weight: 500;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 0.8rem;
-    transition: all ease 300ms;
-  }
-
-  .wraper a h1:hover {
-    background: rgb(24, 178, 206);
-    transform: rotate(-50);
-    color: black;
-  }
-
   .wraper {
     width: 100%;
     max-width: 720px;
-    margin-top: 2px;
+    margin: auto 1px;
+    margin-top: 5%;
     display:grid;
     border-radius: 1.3rem;
   }
@@ -405,7 +383,7 @@ table th {
   form .button input{
     border: 1px solid #0e41d8;
     font-size:16px;
-    font-weight: 600;
+    font-weight: 400;
     font-family:'Poppins';
     width:124px;
     height:40px;
@@ -512,4 +490,35 @@ table th {
     .wraper {
       margin-top: 0;
     }
+  }
+
+  #floating-button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #148ddf;
+    position: fixed;
+    bottom: 6rem;
+    right: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .plus{
+    color: white;
+    position: absolute;
+    top: 0;
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 60px;
+    font-size: 38px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    animation: plus-out 0.3s;
+    transition: all 0.3s;
   }

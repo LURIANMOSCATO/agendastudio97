@@ -75,6 +75,12 @@ https://wa.me/5551995860633?text=Ol%C3%A1%2C%20preciso%20de%20um%20suporte%20seu
 
 }
 
+@media screen and (max-width: 600px) {
+    .floating .widgetlabel {
+        display: none;
+    }
+}
+
 
 </style>
 
@@ -90,7 +96,7 @@ https://wa.me/5551995860633?text=Ol%C3%A1%2C%20preciso%20de%20um%20suporte%20seu
 <h2>Olá</h1>
 </div>
 <!--END HEADERS-->
-
+<a href="#demo-modal">
 <div class="cards">
     <div class="card">
         <div class="top">
@@ -111,13 +117,13 @@ echo '<h1> '.$row.'</h1>';
 
 ?></h1>
         <div class="imgs">
-        <a href="#demo-modal"><img src="css/total2.png"alt=""></a>
+        <img src="css/total2.png"alt="">
         </div>
         </div>
         
         <div class="bottom">
             <div class="left">
-                <small>CABELO</small>
+                <small>CABELO E BARBA</small>
                 <h5><?php
 
 $queryy = "SELECT idContato FROM tb_contatos WHERE servicoContato ='Cabelo e Barba' order by idContato";
@@ -131,21 +137,42 @@ echo '<h5> '.$row.'</h5>';
             </div>
             <div class="right">
                 <div class="expiry">
-                <small>Barba</small>
-                <h5>08/23</h5>
+                <small>BARBA</small>
+                <h5><?php
+
+$queryy = "SELECT idContato FROM tb_contatos WHERE servicoContato ='Barba' order by idContato";
+$query_runn = mysqli_query($conexao, $queryy);
+
+$row = mysqli_num_rows($query_runn);
+
+echo '<h5> '.$row.'</h5>';
+
+?></h5>
                 </div>
                 <div class="cvv">
-                    <small>Cabelo</small>
-                    <h5>123</h5>
+                <small>CABELO</small>
+                    <h5><?php
+
+$queryy = "SELECT idContato FROM tb_contatos WHERE servicoContato ='Cabelo' order by idContato";
+$query_runn = mysqli_query($conexao, $queryy);
+
+$row = mysqli_num_rows($query_runn);
+
+echo '<h5> '.$row.'</h5>';
+
+?></h5>
                 </div>
             </div>
 
             
         </div>
     </div>
-    <!--END CARD-->
-<!--END CARDS-->
 
+    </a>
+    <!--END CARD-->
+
+
+<!--START CARDS-->
 
     <div class="card">
         <div class="top">
@@ -166,7 +193,8 @@ echo '<h2> '.$row.'</h2>';
 
 ?></h1>
         <div class="imgs">
-        <a href="#demo-modal-today"><img src="css/day.png" alt=""></a>
+        <a href="#demo-modal-today">
+<img src="css/day.png" alt=""></a>
         </div>
         </div>
         
@@ -179,7 +207,7 @@ echo '<h2> '.$row.'</h2>';
                 <div class="expiry">
                 <small>DIA</small>
                 <h5><?php
-         $hoje = date('d/m/Y'); echo $hoje;
+         $hoje = date('d/m'); echo $hoje;
         ?></h5>
                 </div>
             </div>
@@ -187,7 +215,10 @@ echo '<h2> '.$row.'</h2>';
             
         </div>
     </div>
+
+    
     <!--END CARD-->
+
 <!--END CARDS-->
 
     <div class="card">
@@ -220,14 +251,23 @@ echo '<h1> '.$row.'</h1>';
             </div>
             <div class="right">
                 <div class="expiry">
-                <small>DO DIA</small>
+                <small>DIA</small>
                 <h5><?php
-         $hoje = date('d/m/Y'); echo $hoje;
+         $hoje = date('d/m'); echo $hoje;
         ?></h5>
                 </div>
                 <div class="cvv">
-                    <small>Total</small>
-                    <h5>123</h5>
+                    <small>TOTAL DO DIA</small>
+                    <h4><?php
+
+$queryy = "SELECT idContato FROM tb_contatos WHERE barbeiro='Guilherme' and dataServico = CURDATE()";
+$query_runn = mysqli_query($conexao, $queryy);
+
+$row = mysqli_num_rows($query_runn);
+
+echo '<h4> '.$row.'</h1>';
+
+?></h4>
                 </div>
             </div>
 
@@ -235,7 +275,8 @@ echo '<h1> '.$row.'</h1>';
         </div>
     </div>
     <!--END CARD-->
-<!--END CARDS-->
+    
+<!--Start CARDS-->
 
     <div class="card">
         <div class="top">
@@ -268,16 +309,20 @@ echo '<h1> '.$row.'</h1>';
             </div>
             <div class="right">
                 <div class="expiry">
-                <small>Serviços do Dia</small>
-                <h5><?php
-         $hoje = date('d/m/Y'); echo $hoje;
-        ?></h5>
+                <small>Dia</small>
+                <h5>
+                    <?php
+         $hoje = date('d/m');
+         
+         echo $hoje;
+                    ?>
+        </h5>
                 </div>
                 <div class="cvv">
-                    <small>TOTAL</small>
+                    <small>TOTAL DO DIA</small>
                     <h5><?php
                     
-                    $queryy = "SELECT idContato FROM tb_contatos WHERE dataServico = CURDATE()";
+                    $queryy = "SELECT idContato FROM tb_contatos WHERE barbeiro='Jonatan' and dataServico = CURDATE()";
 $query_runn = mysqli_query($conexao, $queryy);
 
 $row = mysqli_num_rows($query_runn);
@@ -325,7 +370,7 @@ echo '<h1> '.$row.'</h1>';
                 <div class="expiry">
                 <small>DO DIA</small>
                 <h5><?php
-         $hoje = date('d/m/Y'); echo $hoje;
+         $hoje = date('d/m'); echo $hoje;
         ?></h5>
                 </div>
                 <div class="cvv">
@@ -424,7 +469,6 @@ echo '<h1> '.$row.'</h1>';
         <th scope="col">NOME</th>
         <th scope="col">SERVIÇO</th>
         <th scope="col">BARBEIRO</th>
-        <th scope="col">DATA</th>
         <th scope="col">HORA</th>
         </tr>
     </thead>
@@ -453,7 +497,6 @@ echo '<h1> '.$row.'</h1>';
         <td data-tittle="NOME"><?=$dados["nomeContato"] ?></td>
         <td data-tittle="SERVIÇO"><?=$dados["servicoContato"] ?></td>
         <td data-tittle="BARBEIRO"><?=$dados["barbeiro"] ?></td>
-        <td data-tittle="DATA"><?=$dados["dataServico"] ?></td>
         <td data-tittle="HORA"><?=$dados["horaServico"] ?></td>
         </tr>
     </tbody>
