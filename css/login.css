@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+}
+
+.show-btn i{
+  background: rgba(255, 255, 255, 0.856);
+  padding: 10px 10px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: rgb(32, 31, 31);
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.show-btn:before, .show-btn::after{
+  content: '';
+  display: block;
+  position: absolute;
+  left: -60px;
+  right: -60px;
+  top: -60px;
+  bottom: -60px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.952);
+  animation: animar 1.5s linear infinite;
+}
+
+.show-btn::after {
+  animation-delay: .5s;
+}
+
+@keyframes animar {
+  0%{
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  
+}
+
+.show-btn, .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.container {
+  display: none;
+  background: #fff;
+  width: 320px;
+  padding: 30px;
+  box-shadow: 0px 10px 31px -3px rgba(0,0,0,0.3);
+  border-radius: 2rem;
+  transition: all ease-in 0.4s;
+}
+
+#show:checked ~ .container {
+  display: block;
+
+}
+
+.container .close-btn i img {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.close-btn i img:hover{
+
+  background: rgba(223, 216, 216, 0.562);
+  color: white;
+  border-radius: 50%;
+  
+}
+
+.container .text {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+
+  color: rgb(37, 189, 209);
+}
+
+.container form {
+  margin-top: 20px;
+}
+
+.container form .data{
+  height:45px;
+  width:100%;
+  margin: 40px 0; 
+}
+form .data label {
+font-size: 18px;
+font-weight: 500;
+}
+
+form .data input {
+  height:100%;
+  width:100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border-radius: 8px;
+  border: 1px solid rgb(90, 87, 87);
+}
+
+form .btn{
+  margin: 30px 0;
+  height: 45px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+form .btn .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  background: rgba(0, 162, 255, 0.815);
+  border: 1px solid rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+form .btn:active{
+  background:rgb(42, 146, 187);
+  transform: scale(0.98);
+}
+
+form .btn:hover {
+  cursor: pointer;
+}
+
+
+form .btn button {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+

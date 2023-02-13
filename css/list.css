@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #f8f7f8;
+    border-radius: 4px;
+    border: 6px solid #ffffff;
+  }
+body {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    margin-left: 0;
+    justify-content: center;
+    display: flex;
+    margin-top: 3px;
+}
+
+/*TABELAS*/
+
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 7px 8px 8px -3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 4px 20px rgba(5, 57, 94, .5);
+  -webkit-box-shadow:  0px 4px 20px rgba(5, 57, 94, .5);
+  border-radius: 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+table tr{
+  font-size: 14px;
+  font-weight: 300;
+}
+table th {
+  font-weight: 500;
+  color:rgb(22, 111, 194);
+  letter-spacing: 0.1rem;
+  margin: 1px;
+  border-spacing: 1px;
+  padding-left: 1rem;
+  font-size: 12px;
+}
+
+@media screen and (max-width:767px) {
+  table thead {
+    display:none; 
+  }
+  table{
+    box-shadow: none;
+  }
+  table tbody{
+    padding: 0 18px;
+  }
+
+  table  tbody, table tbody tr{
+    
+    display: block; width: 100%; background: #f1faff; border-radius: 20px;
+  }
+
+  table tbody tr th::before, table tbody tr td::before{
+    content: attr(data-tittle); display:block; font-weight: 300; font-size: 15px; color: rgba(8, 84, 138, 0.836);
+  }
+
+  table tbody tr td,
+  table tbody tr th {
+    display: block;
+    width: 50%; 
+    float: left; 
+    font-size: 16px; 
+    color:rgba(0, 0, 0, 0.845);
+    border-radius: 6px; 
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+
+  table tbody tr {
+    margin-bottom: 16px; 
+    clear:both;
+    float:left; 
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px rgba(5, 57, 94, .5);
+    -moz-box-shadow: 0px 6px 20px rgba(5, 57, 94, .5);
+    -webkit-box-shadow:  0px 4px 10px rgba(5, 57, 94, .5);
+  }
+}
+
+/*TABELAS*/
+
+::-webkit-scrollbar {
+  background: rgb(255, 255, 255);
+  position: relative;
+}
+
+
+.search{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 60px;
+  transition: 0.5s;
+  box-shadow: 0 0 0 5px rgba(239, 240, 241, 0.24);
+  overflow: hidden;
+  box-shadow: 7px 8px 8px -3px rgba(0,0,0,0.2);
+}
+
+.search.active {
+  width: 360px;
+}
+
+.search .icon {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.search .icon::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #083db1;
+  border-radius: 50%;
+  transform: translate(-4px,-4px);
+}
+
+.search .icon::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background: #083db1;
+  transform: translate(6px,6px) rotate(310deg);
+}
+
+.search .input {
+  position: relative;
+  width: 360px;
+  height: 40px;
+  left: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.search .input input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+.clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  right: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear::before{
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 15px;
+  background: #999;
+  transform: rotate(45deg);
+}
+
+.clear::after{
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 15px;
+  background: #999;
+  transform: rotate(315deg);
+}
+
+.wraper a h1{
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(22, 111, 194);
+    width: 6rem;
+    font-size: 14px;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    transition: all ease 300ms;
+  }
+
+  .wraper a h1:hover {
+    background: rgb(24, 178, 206);
+    transform: rotate(-50);
+    color: black;
+  }
+
+  .wraper {
+    width: 100%;
+    max-width: 720px;
+    margin-top: 2px;
+    display:grid;
+    border-radius: 1.3rem;
+  }
+
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.596);
+    transition: all .4s;
+    padding: 25px 30px;
+    overflow: auto;
+    z-index:1000;
+  }
+
+
+  .modal:target {
+    visibility: visible;
+    opacity: 6;
+  }
+
+.modal-content {
+    border-radius: 8px;
+    position: relative;
+    width: 500px;
+    max-width: 700px;
+    padding: 25px 30px;
+    background: #fff;
+    box-shadow: 7px 20px 22px -6px rgba(0,0,0,0.1);
+    
+  }
+
+  .modal-content .title {
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .modal_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+  }
+
+  .modal form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  form .user-details .input-box{
+    margin-bottom: 15px;
+    margin: 15px 0 12px ;
+    width: calc(100% / 2- 20px);
+  }
+
+  form .input-box .dropdown-select {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-family: 'Poppins';
+    cursor: pointer;
+  }
+
+  form .input-box .dropdown-select option {
+    border-radius: 1px;
+    background-color: white;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  form .input-box .dropdown-select option .select {
+    padding: 10rem;
+    font-size: 1.4rem;
+    margin-top: 5rem;
+    margin: 0 auto;
+  }
+
+  .user-details .input-box label {
+    font-weight: 300;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .user-details .input-box input:focus{
+    border-color: #1072d3;
+  }
+  .user-details .input-box input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid rgb(29, 26, 26);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+  }
+  .user-details .input-box input[type="date"] {
+    background: rgb(25, 137, 212);
+    color: #fff;
+    font-family: 'Poppins';
+    border-radius: 6px;
+    outline: none;
+    border: none;
+  }
+
+  ::-webkit-calendar-picker-indicator{
+    background-color: #fff;
+    padding: 5px;
+    margin: 2%;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .modal-edit {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 197, 226, 0.664);
+    transition: all .4s;
+    padding: 25px 30px;
+  }
+  
+
+  form .button {
+    height: 45px;
+    margin: 45px 0;
+  }
+
+  form .button input{
+    border: 1px solid #0e41d8;
+    font-size:16px;
+    font-weight: 600;
+    font-family:'Poppins';
+    width:124px;
+    height:40px;
+    text-shadow: 0px 1px 0px #283966;
+    background-color:transparent;
+    height: 100%;
+    width: 100%;
+    border-radius:6px;
+  }
+
+  form .button input:hover{
+    background: #0e41d8;
+    cursor: pointer;
+    color: #fff;
+  }
+
+
+.dropdown{
+  position: relative;
+  margin-top: 300px;
+  width: 300px;
+  height: 50px;
+  }
+
+  .dropdown::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    right: 20px;
+    top: 15px;
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+  }
+
+  .dropdown.active::before {
+
+    top: 25px;
+    transform:rotate(-255deg);
+  }
+
+  .dropdown input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 5px 20px #000;
+  }
+
+  .dropdown .option {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 30px 30px #000;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+  }
+  .dropdown.active .option{
+    display: block;
+    
+  }
+
+  .dropdown .option div{
+    padding: 12px 20px;
+    cursor: pointer
+  }
+
+  .dropdown .option div:hover {
+    background: 
+    #62baea;
+    color: #fff;
+  }
+
+  @media (max-width: 584px) {
+    .modal{
+        max-width: 100%;
+        background-size: cover;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 10px;
+        margin: 10px 15px 0;
+        width: 100%;
+    }
+
+    .modal form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+
+    .wraper {
+      margin-top: 0;
+    }
+  }
