@@ -90,6 +90,7 @@ https://wa.me/5551995860633?text=Ol%C3%A1%2C%20preciso%20de%20um%20suporte%20seu
     <div class="date">
             <?php
             $hoje = date('d/m/Y'); echo $hoje;
+            echo date ("H:i:s");
             ?>
     </div>
     
